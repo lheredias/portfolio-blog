@@ -1,0 +1,42 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block body %}
+
+<div class="pl-5 pr-5 pt-2 pb-2" id="about">
+  {% include "blog/aboutme.html" %}
+  <hr>
+  {% include "blog/skills.html" %}
+  <hr>
+  {% include "blog/journey.html" %}
+</div>
+<div id="projects">
+  <div class="row justify-content-center">
+    {% for post in posts %}
+    <div class="col-sm-6 col-lg-4 col-md-6 row justify-content-center mr-1 rounded">
+      <div class="card text-white bg-danger mb-3" style="max-width: 35rem;">
+        <img class="card-img-top" data-post="{{ post.id }}" src="{{ post.image }}" alt="Card image cap">
+        <div class="card-header">{{ post.title }}</div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">{{ post.title }}</h5> -->
+          <p class="card-text">{{ post.summary }}</p>
+          <div class="row justify-content-start">
+            <a class="btn btn-outline" data-post="{{ post.id }}">
+              <i class="bi bi-arrow-up-right-square-fill"></i> Read more
+            </a>
+          </div>
+        </div>
+        <div class="card-footer">
+          {% for label in post.labels %}
+          <span class="badge badge-light">
+            {{ label }}
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% include "blog/articles.html" %}
+
+{% endblock %}

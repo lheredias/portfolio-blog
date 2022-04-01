@@ -1,0 +1,22 @@
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.navbar-brand:hover {
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  cursor: pointer;
+  opacity: 0.95;
+}
+
+h1 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 > a:hover {
+  opacity: 0.8;
+  color: indianred;
+}
