@@ -1,33 +1,31 @@
-<div id="articles">
-  <div class="d-flex flex-wrap justify-content-center">
-    <div>
-      {% for post in posts %}
-      <div class="border border-danger rounded pl-5 pr-5 pt-5 pb-5 ml-5 mr-5" id="{{ post.id }}" name="article">
-        <div class="border-bottom border-danger">
-          <h1>
-            {{ post.title }}
-            <a href="{{ post.github }}">
-              <i class="bi bi-github pl-2" data-toggle="tooltip" title="Visit Project on GitHub"></i>
-            </a>
-            {% if post.website %}
-            <a href="{{ post.website }}">
-              <i class="bi bi-globe2 pl-2" data-toggle="tooltip" title="Visit Deployed Website"></i>
-            </a>
-            {% endif %}
-          </h1>
-        </div>
-        <div class="pt-3">
-          <img class="img-fluid rounded mx-auto d-block" width="70%" src="{{ post.image }}">
-          <hr>
-          {{ post.parse_content|safe }}
-        </div>
+<div class="d-flex flex-wrap justify-content-center">
+  <div>
+    {% for post in posts %}
+    <div class="border border-danger rounded pl-5 pr-5 pt-5 pb-5 ml-5 mr-5" id="{{ post.id }}" name="article">
+      <div class="border-bottom border-danger">
+        <h1>
+          {{ post.title }}
+          <a href="{{ post.github }}">
+            <i class="bi bi-github pl-2" data-toggle="tooltip" title="Visit Project on GitHub"></i>
+          </a>
+          {% if post.website %}
+          <a href="{{ post.website }}">
+            <i class="bi bi-globe2 pl-2" data-toggle="tooltip" title="Visit Deployed Website"></i>
+          </a>
+          {% endif %}
+        </h1>
       </div>
-      {% endfor %}
-      <div class="text-center pt-5">
-        <button type="button" class="btn btn-danger" id="project_link">
-          <i class="bi bi-arrow-left"></i> back
-        </button>
+      <div class="pt-3">
+        <img class="img-fluid rounded mx-auto d-block" width="70%" src="{{ post.image }}">
+        <hr>
+        {{ post.parse_content|safe }}
       </div>
+    </div>
+    {% endfor %}
+    <div class="text-center pt-5">
+      <button type="button" class="btn btn-danger" id="project_link">
+        <i class="bi bi-arrow-left"></i> back
+      </button>
     </div>
   </div>
 </div>

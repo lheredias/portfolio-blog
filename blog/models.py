@@ -5,6 +5,15 @@ import markdown2
 class User(AbstractUser):
     pass
 
+class Skill(models.Model):
+    skill_set=models.JSONField()
+    skill_category=models.CharField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.skill_category
+    def serialize(self):
+        return {self.skill_category: self.skill_set}
+        
 class Post(models.Model):
     STATUS = (
       (0,"Project"),
