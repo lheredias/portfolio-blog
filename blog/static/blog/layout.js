@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
   if (darkThemeMq.matches) {
-    document.getElementsByTagName('body')[0].className=`body bg-dark text-light`
+    document.getElementsByTagName('body')[0].className=`bg-dark text-light`
   } else {
-    document.getElementsByTagName('body')[0].className=`body bg-loght text-dark`
+    document.getElementsByTagName('body')[0].className=`bg-white text-dark`
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     if (colorScheme === "dark") {
-      document.getElementsByTagName('body')[0].className=`body bg-dark text-light`
+      document.getElementsByTagName('body')[0].className=`bg-dark text-light`
 		} else {
-      document.getElementsByTagName('body')[0].className=`body bg-light text-dark`
+      document.getElementsByTagName('body')[0].className=`bg-white text-dark`
 
 		}
   });
