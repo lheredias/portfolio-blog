@@ -27,15 +27,24 @@
 <body>
   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-danger">
     <a class="navbar-brand" id="about_link">Raul H.</a>
-    <div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
           <a class="nav-link" id="project_link">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mailto:lheredias@icloud.com?subject=I saw your blog&body=Hi there">
-            Contact: lheredias@icloud.com
+          <a class="navbar-brand" href="mailto:lheredias@icloud.com?subject=I saw your blog&body=Hi there">
+            <i class="bi bi-envelope-fill ml-2"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="https://github.com/lheredias">
+            <i class="bi bi-github"></i>
           </a>
         </li>
       </ul>

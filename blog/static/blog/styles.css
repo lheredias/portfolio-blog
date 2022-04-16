@@ -31,7 +31,7 @@ h1 > a:hover {
 
 @keyframes second {
   25% {opacity: 0.4;}
-  50% {opacity: 0.35;}
+  50% {opacity: 0.35; border-radius: 20%;}
   75% {opacity: 0.4;}
 }
 
@@ -42,6 +42,18 @@ h1 > a:hover {
   box-shadow: 7px 15px 250px 50px SlateGray;
   animation-duration: 7s;
   animation-iteration-count: infinite;
-  border-radius: 10%;
+  border-radius: 15%;
 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+.about-title {
+  font-family: 'Chicle', cursive;
+}
+li > a > i {
+  color: WhiteSmoke;
+  opacity: 0.8;
+}
+li > a > i:hover {
+  opacity: 1;
 }

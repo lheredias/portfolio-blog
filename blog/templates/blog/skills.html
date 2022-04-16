@@ -1,29 +1,17 @@
 <h5 class="text-center text-secondary">My Skills</h5>
 <hr>
 <div class="row">
-  <div class="col mb-1">
+  <div class="col mb-1 align-self-center">
     <div class="list-group">
       {% for category, skill_list in skills.items %}
-      <div class="list-group-item list-group-item-success flex-column">
-        <div class="d-flex w-100 justify-content-between">
-          <small class="text-muted">{{ category }}</small>
-          <p class="pl-5 pr-5 text-right">{{ skill_list|join:" // " }}</p>
-          <i class="bi bi-check-lg"></i>
-        </div>
-      </div>
+      {% include "blog/skill_list.html" %}
       {% endfor %}
     </div>
   </div>
   <div class="col mb-1 align-self-center">
     <div class="list-group">
       {% for category, skill_list in skills02.items %}
-      <div class="list-group-item list-group-item-success flex-column">
-        <div class="d-flex w-100 justify-content-between">
-          <small class="text-muted">{{ category }}</small>
-          <p class="pl-5 pr-5 text-right">{{ skill_list|join:" // " }}</p>
-          <i class="bi bi-check-lg"></i>
-        </div>
-      </div>
+      {% include "blog/skill_list.html" %}
       {% endfor %}
     </div>
   </div>
