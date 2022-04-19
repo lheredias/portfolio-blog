@@ -1,3 +1,6 @@
+@-ms-viewport{
+  width: device-width;
+}
 .nav-link:hover {
   cursor: pointer;
 }
@@ -43,8 +46,8 @@ h1 > a:hover {
   animation-duration: 7s;
   animation-iteration-count: infinite;
   border-radius: 15%;
-  height: auto
-
+  height: auto;
+  width: auto
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
@@ -57,7 +60,4 @@ li > a > i {
 }
 li > a > i:hover {
   opacity: 1;
-}
-@-ms-viewport{
-  width: device-width;
 }
