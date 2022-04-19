@@ -43,6 +43,7 @@ h1 > a:hover {
   animation-duration: 7s;
   animation-iteration-count: infinite;
   border-radius: 15%;
+  height: auto
 
 }
 
@@ -56,4 +57,7 @@ li > a > i {
 }
 li > a > i:hover {
   opacity: 1;
+}
+@-ms-viewport{
+  width: device-width;
 }
