@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
+
   document.querySelector('#about_link').addEventListener('click', about_view)
   document.querySelector('#project_link').addEventListener('click', project_view)
-  hide_articles()
 
   document.addEventListener('click', event=> {
     if (event.target.innerText == ' back') {
@@ -11,11 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
     let article_id = event.target.getAttribute('data-post');
     if(article_id) { 
       console.log(article_id)
-      article_view(article_id)
+      STORE.article_id=article_id
+      article_view()
     }
     })
 
-  about_view()
+  // about_view()
+  console.log(STORE.page)
+  let page = STORE.page
+  let module = ROUTER[page]
+  module()
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
@@ -37,6 +41,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
+STORE = {
+  page: fromLocalStorage("current-page") || "home",
+  article_id: fromLocalStorage("article_id") || null
+}
+
+ROUTER = {
+  "home":about_view,
+  "projects":project_view,
+  "article":article_view,
+}
+
+function fromLocalStorage(key) {
+  const data = JSON.parse(localStorage.getItem("rh_blog")) || {};
+  return data[key];
+}
+
+function saveToLocalStorage(key, value) {
+  let data = JSON.parse(localStorage.getItem("rh_blog")) || {};
+  data = { ...data, [key]: value };
+  localStorage.setItem("rh_blog", JSON.stringify(data));
+}
+
 function hide_articles() {
   let articles = document.getElementsByName("article")
   articles.forEach((article => {
@@ -50,6 +76,7 @@ function about_view() {
   document.querySelector('#projects').style.display = 'none';
   document.querySelector('#articles').style.display = 'none';
   hide_articles()
+  saveToLocalStorage("current-page", "home")
 
 }
 
@@ -59,14 +86,21 @@ function project_view() {
   document.querySelector('#projects').style.display = 'block';
   document.querySelector('#articles').style.display = 'none';
   hide_articles()
+  saveToLocalStorage("current-page", "projects")
 
 }
 
-function article_view(post_id) {
-
-  document.querySelector('#about').style.display = 'none';
-  document.querySelector('#projects').style.display = 'none';
-  document.querySelector('#articles').style.display = 'block';
-  document.getElementById(post_id).style.display = 'block';
-
+function article_view() {
+  if (STORE.article_id) {
+    console.log("here")
+    document.querySelector('#about').style.display = 'none';
+    document.querySelector('#projects').style.display = 'none';
+    hide_articles()
+    document.querySelector('#articles').style.display = 'block';
+    document.getElementById(STORE.article_id).style.display = 'block';
+    saveToLocalStorage("current-page", "article") 
+    saveToLocalStorage("article_id", STORE.article_id) 
+  } else {
+    console.log("got here")
+  }
 }
