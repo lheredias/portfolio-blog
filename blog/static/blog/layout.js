@@ -70,6 +70,13 @@ function hide_articles() {
   }))
 }
 
+function hide_views() {
+  document.querySelector('#about').style.display = 'none';
+  document.querySelector('#projects').style.display = 'none';
+  document.querySelector('#articles').style.display = 'none';
+  hide_articles()
+}
+
 function about_view() {
 
   document.querySelector('#about').style.display = 'block';
