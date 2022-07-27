@@ -81,8 +81,8 @@ function hide_articles() {
 }
 
 function routing(pop=false) {
-  let articleRegex = /^\/projects\/[1-9]+$/
-  let idRegex = /[1-9]+$/
+  let articleRegex = /^\/projects\/[1-9]+[0-9]*$/
+  let idRegex = /[1-9]+[0-9]*$/
   let page = window.location.pathname
   if (Object.keys(ROUTER).includes(page)) {
     let module = ROUTER[page]
