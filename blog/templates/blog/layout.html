@@ -25,7 +25,7 @@
   {% endblock %}
 </head>
 
-<body>
+<header>
   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-danger">
     <a class="navbar-brand" id="about_link">Raul H.</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -36,11 +36,11 @@
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-          <a class="nav-link" id="project_link">Projects</a>
+          <a class="nav-link mr-2" id="project_link">Projects</a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand" href="mailto:lheredias@icloud.com?subject=I saw your blog&body=Hi there">
-            <i class="bi bi-envelope-fill ml-2"></i>
+            <i class="bi bi-envelope-fill"></i>
           </a>
         </li>
         <li class="nav-item">
@@ -56,10 +56,17 @@
       </ul>
     </div>
   </nav>
-  <div class="mx-auto pl-3 pr-3 mt-5 mb-5" style="max-width:900px">
+
+</header>
+
+<body>
+  <div class="mx-auto pl-3 pr-3 mt-5 mb-5" style="max-width:800px">
     {% block body %}
     {% endblock %}
   </div>
 </body>
+<footer>
+  Made with ❤️ by Raul H.
+</footer>
 
 </html>

@@ -1,6 +1,46 @@
 @-ms-viewport{
   width: device-width;
 }
+
+/* body {
+  background: url("./jameswebb.png");
+  background-size: auto 100%;
+} */
+
+/* @media only screen and (min-width: 768px) {
+  body {
+    background: url("./jameswebb.png");
+    background-size: auto 100%;
+  }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Basic&display=swap');
+body {
+  font-family: 'Basic', sans-serif;
+}
+.alert-light {
+  background: transparent;
+  color: black;
+  border: none;
+}
+
+.alert-dark {
+  background: transparent;
+  color: white;
+  border: none;
+}
+
+.skill-light {
+  background: transparent;
+  color: black;
+  border: 2px dashed black;
+}
+
+.skill-dark {
+  background: transparent;
+  color: white;
+  border: 2px dashed white;
+}
 .nav-link:hover {
   cursor: pointer;
 }
@@ -14,16 +54,20 @@
   opacity: 0.95;
 }
 
-h1 > a {
+h2 > a {
   color: inherit;
   text-decoration: none;
 }
 
-h1 > a:hover {
+h2 > a:hover {
   opacity: 0.8;
   color: indianred;
 }
 
+footer {
+  padding: 1rem;
+  text-align: center;
+}
 /* @keyframes first {
   0% {transform: scale(1) rotate(0deg)}
   25% {transform: scale(0.90) rotate(7deg); opacity: 0.5;}
@@ -43,11 +87,11 @@ h1 > a:hover {
   /* position:relative; */
   opacity: 0.5;
   animation-name: second;
-  box-shadow: 7px 15px 250px 50px SlateGray;
+  box-shadow: 7px 15px 250px 10px SlateGray;
   animation-duration: 7s;
   animation-iteration-count: infinite;
   border-radius: 15%;
-  height: 40vh;
+  height: 35vh;
   /* width: 5vh */
 }
 
@@ -61,4 +105,8 @@ li > a > i {
 }
 li > a > i:hover {
   opacity: 1;
+}
+
+.post-image {
+  filter: drop-shadow(0px 2px 5px black);
 }

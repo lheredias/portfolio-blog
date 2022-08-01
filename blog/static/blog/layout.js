@@ -28,20 +28,73 @@ document.addEventListener('DOMContentLoaded', function() {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
+  themeHandler() 
+  // const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  // if (darkThemeMq.matches) {
+  //   document.getElementsByTagName('body')[0].className=`bg-dark text-light`
+  //   Array.from(document.getElementsByClassName('alert-custom')).forEach(element => {
+  //     element.className=`alert-custom alert-dark`
+  //   })
+
+  // } else {
+  //   document.getElementsByTagName('body')[0].className=`bg-white text-dark`
+  //   Array.from(document.getElementsByClassName('alert-custom')).forEach(element => {
+  //     element.className=`alert-custom alert-light`
+  //   })
+  // }
+  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+  //   if (colorScheme === "dark") {
+  //     document.getElementsByTagName('body')[0].className=`bg-dark text-light`
+  //     Array.from(document.getElementsByClassName('alert-custom')).forEach(element => {
+  //       element.className=`alert-custom alert-dark`
+  //     })
+	// 	} else {
+  //     document.getElementsByTagName('body')[0].className=`bg-white text-dark`
+  //     Array.from(document.getElementsByClassName('alert-custom')).forEach(element => {
+  //       element.className=`alert-custom alert-light`
+  //     })
+	// 	}
+  // });
+})
+
+function themeHandler() {
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  let body = document.getElementsByTagName('body')[0]
+  let skills = Array.from(document.getElementsByClassName('skill'))
+  let customAlerts = Array.from(document.getElementsByClassName('alert-custom'))
   if (darkThemeMq.matches) {
-    document.getElementsByTagName('body')[0].className=`bg-dark text-light`
+    darkTheme(body, customAlerts, skills)
   } else {
-    document.getElementsByTagName('body')[0].className=`bg-white text-dark`
+    lightTheme(body, customAlerts, skills)
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     if (colorScheme === "dark") {
-      document.getElementsByTagName('body')[0].className=`bg-dark text-light`
+      darkTheme(body, customAlerts, skills)
 		} else {
-      document.getElementsByTagName('body')[0].className=`bg-white text-dark`
+      lightTheme(body, customAlerts, skills)
 		}
   });
-})
+}
+
+function lightTheme(body, customAlerts, skills) {
+  body.className=`bg-white text-dark`
+  customAlerts.forEach(element => {
+    element.className=`alert-custom alert-light`
+  })
+  skills.forEach(element => {
+    element.className=`list-group-item skill flex-column skill-light`
+  })
+}
+
+function darkTheme(body, customAlerts, skills) {
+  body.className=`bg-dark text-light`
+  customAlerts.forEach(element => {
+    element.className=`alert-custom alert-dark`
+  })
+  skills.forEach(element => {
+    element.className=`list-group-item skill flex-column skill-dark`
+  })
+}
 
 STORE = {
   page: fromLocalStorage("current-page") || "/",

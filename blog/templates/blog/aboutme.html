@@ -2,20 +2,20 @@
   <div class="row">
     <div class="col-md-5 align-self-center mt-2 mb-2">
       <div class="d-flex flex-wrap justify-content-center">
-        <img class="img-fluid photo" src="{{ aboutme.image }}">
+        <img class=" photo" src="{{ aboutme.image }}">
       </div>
       <hr>
       <div class="d-flex flex-wrap justify-content-center">
-        <img class="img-fluid photo" src="{{ aboutme.website }}">
+        <img class=" photo" src="{{ aboutme.website }}">
       </div>
     </div>
     <div class="col-md-7">
       <div class="d-flex flex-wrap justify-content-center">
         <div>
-          <div class="border-top border-secondary ml-2 mr-2 mt-2 mb-2">
+          <div class="ml-2 mr-2 mt-2 mb-2">
 
-            <div class="alert alert-info" role="alert">
-              <h3 class="text-center text-secondary about-title pb-2">{{ aboutme.title }}</h3>
+            <div class="alert alert-custom" role="alert">
+              <h3 class="text-center text-secondary pb-3">{{ aboutme.title }}</h3>
               {{ aboutme.parse_content|safe }}
             </div>
 
