@@ -16,12 +16,14 @@ body {
   background: transparent;
   color: black;
   border: none;
+  text-align: justify;
 }
 
 .alert-dark {
   background: transparent;
   color: white;
   border: none;
+  text-align: justify;
 }
 
 .skill-light {
@@ -61,6 +63,7 @@ h2 > a:hover {
 footer {
   padding: 1rem;
   text-align: center;
+  
 }
 /* @keyframes first {
   0% {transform: scale(1) rotate(0deg)}
